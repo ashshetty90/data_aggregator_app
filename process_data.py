@@ -11,14 +11,16 @@ class DataProcessor:
         self.user_csv_path = user_csv_path
         self.txn_csv_path = txn_csv_path
 
-    def get_filtered_data(self, file_path, column_name, value):
+    @staticmethod
+    def get_filtered_data(file_path, column_name, value):
         with open(file_path, 'r', newline="") as file:
             dict_reader = csv.DictReader(file)
             yield from filter(
                 lambda r: r[column_name] == value,
                 dict_reader)
 
-    def join_data_sets(self, user_iter, txn_iter, join_key):
+    @staticmethod
+    def join_data_sets(user_iter, txn_iter, join_key):
         merged_data_list = []
         for a, b in product(user_iter, txn_iter):
             if a[join_key] == b[join_key]:
@@ -28,15 +30,13 @@ class DataProcessor:
                 merged_data_list.append(temp_dict)
         return merged_data_list
 
-    def aggregate_data(self, iterable_product):
+    @staticmethod
+    def aggregate_data(iterable_product):
         aggregated_data_set = []
         for txn_ctg_id, obj_list in iterable_product:
-            txn_amount = 0
-            distinct_user_count = 0
-            for obj in obj_list:
-                txn_amount += float(obj['transaction_amount'])
-                distinct_user_count += obj['user_id_count']
-
+            obj_list_copy = list(obj_list).copy()
+            txn_amount = sum(float(obj['transaction_amount']) for obj in obj_list_copy)
+            distinct_user_count = sum(obj['user_id_count'] for obj in obj_list_copy)
             aggregated_data_set.append(
                 {'transaction_category_id': txn_ctg_id,
                  'aggregated_transaction_amount': txn_amount,
