@@ -16,8 +16,8 @@ from
           then 1
           else 0 end as change_flag
     from dim_dep_agreement
-  ) as row_duplicates
-) as row_non_duplicates
+  ) as grouped_duplicates
+) as non_duplicates
 group by agrmnt_id,client_id,product_id,interest_rate,dup_rows
 order by sk
 )
