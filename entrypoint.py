@@ -1,4 +1,3 @@
-
 from process_data import DataProcessor
 
 USERS_CSV_FILE_PATH = "resources/users.csv"
