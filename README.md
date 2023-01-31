@@ -46,7 +46,7 @@ After having successfully downloaded the application, please go to the root dire
 The second assignment can be found in the sql file [here](sql_tasks/task_2_feature_table_computation.sql) and the detailed follow up questions are answered [here](sql_tasks/task_2_feature_table_computation.md)
 
 # Sql (Task-3):
-The third assignment can be found in the sql file [here](sql_tasks/task_3_dimension_deduplication.sql) and the detailed follow up questions are answered [here]()
+The third assignment can be found in the sql file [here](sql_tasks/task_3_dimension_deduplication.sql) and the detailed follow up questions are answered [here](sql_tasks/task_3_dimension_deduplication.md)
 
 
 
