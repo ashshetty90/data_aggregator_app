@@ -40,6 +40,8 @@ After having successfully downloaded the application, please go to the root dire
 ![img.png](images/docker_install.png)
 ### Sample Output
 ![img.png](images/sample_ouput.png)
+### Tests:
+![img.png](images/tests.png)
 
 
 # Sql (Task-2):
