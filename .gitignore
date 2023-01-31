@@ -2,3 +2,5 @@
 .idea/vcs.xml
 *.pyc
 *.iml
+.idea/dbnavigator.xml
+.idea/csv-plugin.xml
