@@ -1,5 +1,5 @@
 /venv/
-.idea/vcs.xml
+.idea/*
 *.pyc
 *.iml
 .idea/*.xml
